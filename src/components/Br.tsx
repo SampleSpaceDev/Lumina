@@ -1,5 +1,3 @@
-import { ComponentProps } from "react";
-
-export function Br(props: ComponentProps<any>) {
+export function Br() {
     return <p><br /></p>
 }

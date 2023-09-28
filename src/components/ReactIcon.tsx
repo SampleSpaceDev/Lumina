@@ -15,7 +15,7 @@ export function ReactIcon(props: ComponentProps<any>) {
     )
 }
 
-function HypixelLogo(props: ComponentProps<any>) {
+function HypixelLogo() {
     return (
         <IconContext.Consumer>
             {({ className }) =>

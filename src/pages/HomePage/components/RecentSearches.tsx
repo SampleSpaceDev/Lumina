@@ -1,13 +1,13 @@
 import React from "react";
 
-import { ComponentProps, useState } from "react";
+import { useState } from "react";
 import Cookies from "js-cookie";
 import { MinecraftText, Button, ReactIcon } from "../../../components";
 import { Link } from "react-router-dom";
 import { APP } from "../../../constants";
 import { MdMoreHoriz } from "react-icons/md";
 
-export function RecentSearches(props: ComponentProps<any>) {
+export function RecentSearches() {
     let cookie = Cookies.get("recentSearches");
     if (cookie === undefined) {
         cookie = '[]';

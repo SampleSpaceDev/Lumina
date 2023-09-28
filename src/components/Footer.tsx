@@ -1,8 +1,7 @@
-import { ComponentProps } from "react";
 import { ExternalLink } from "./ExternalLink";
 import './Footer.css';
 
-export function Footer(props: ComponentProps<any>) {
+export function Footer() {
     return (
         <footer className="p-1 footer font-xs border">
             <span className="flex-1 h-flex align-items-center">

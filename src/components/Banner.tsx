@@ -1,4 +1,4 @@
-import { ComponentProps, CSSProperties, ReactElement, useEffect, useState } from "react";
+import { CSSProperties, ReactElement, useEffect, useState } from "react";
 import { IconType } from "react-icons";
 import { MdClose, MdContentCopy, MdInfoOutline, MdReport } from "react-icons/md";
 import * as Utils from '../utils';
@@ -7,7 +7,7 @@ import { ReactIcon } from "./ReactIcon";
 import { useAppContext, useTooltip } from "../hooks";
 import './Banner.css';
 
-export function Banner(props: ComponentProps<any>): ReactElement {
+export function Banner(): ReactElement {
     const { banner } = useAppContext();
     const [bannerVisibility, setBannerVisibility] = useState('hidden');
     const bannerStyle = getStyle(banner?.style);

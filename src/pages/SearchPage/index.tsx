@@ -1,8 +1,7 @@
 import { Redirect, useParams } from "react-router-dom";
-import { ComponentProps } from "react";
 import { PAGES } from "../../constants";
 
-export function SearchPage(props: ComponentProps<any>) {
+export function SearchPage() {
     const { slug } = useParams<{ slug: string }>();
 
     const inputValues = slug
