@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Cookies from "js-cookie";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import { PAGES } from "./constants";
+import { HomePage } from "./pages/HomePage";
 
 function App() {
+    const pinnedPlayer = Cookies.get("pinnedPlayer");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router basename={process.env.PUBLIC_URL}>
+          <Switch>
+              <Route exact path={"/"}>
+                  {pinnedPlayer ? <Redirect to={`/search/${pinnedPlayer}`}/> : <Redirect to={"/home"}/>}
+              </Route>
+              {PAGES.map((page) => <Route key={page.path} path={`/${page.path}/:slug`}><page.component /></Route>)}
+              <Route path="/home">      <HomePage />    </Route>
+              {/*<Route path="/search">    <SearchPage />  </Route>*/}
+          </Switch>
+      </Router>
   );
 }
 
